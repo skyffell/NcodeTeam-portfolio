@@ -2,20 +2,20 @@ import Arrow from "../../components/Arrow"
 import Button from "../../components/Button"
 import Card from "../../components/Card"
 import Ellipse from "../../components/Ellipse"
-import SectoinsHeader from "../../components/SectionsHeader"
+import SectionsHeader from "../../components/SectionsHeader"
 function Hero() {
 
     return( 
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="team-presentation">
+    <section className="hero" id="home">
+        <div className="container">
+            <div className="team-presentation">
                
             <SectionsHeader 
             mainText = "N-CODE TEAM" 
             subText = "От пикселя до API - создаем цифровые решения под ключ"> 
             </SectionsHeader>
 
-                <div class="developer-cards">
+                <div className="developer-cards">
                  
                      <Card 
                      version = "frontend" 

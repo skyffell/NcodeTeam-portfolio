@@ -1,6 +1,6 @@
 const FooterLinks = () => {
     return(
-         <div class="footer-links">
+         <div className="footer-links">
                     <a href="#home">Главная</a>
                     <a href="#about">О нас</a>
                     <a href="#projects">Проекты</a>

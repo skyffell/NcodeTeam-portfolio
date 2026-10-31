@@ -1,4 +1,4 @@
-import NCodeLogo from "../components/NCodeLogo";
+import NCodeLogo from "../NCodeLogo";
 import LoadingBar from "./LoadingBar";
 
 function Preloader() { 

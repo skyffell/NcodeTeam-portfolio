@@ -1,9 +1,9 @@
 const NCodeLogo = () => {
     return(
-        <div class="footer-logo">
-                    <span class="n-letter">N</span>
-                    <span class="dash">-</span>
-                    <span class="code-text">CODE</span>
+        <div className="footer-logo">
+                    <span className="n-letter">N</span>
+                    <span className="dash">-</span>
+                    <span className="code-text">CODE</span>
                 </div>
     )
 }

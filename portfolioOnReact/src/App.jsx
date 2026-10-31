@@ -1,5 +1,5 @@
 import {AboutTeam, Contact, Footer, Hero, Projects, TechStack, WhyUs}  from './sections'
-import Preloader from './Preloader'
+import Preloader from './components/Preloader'
 function App(){
  return(
     <div>  

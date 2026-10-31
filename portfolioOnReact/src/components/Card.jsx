@@ -1,14 +1,14 @@
 function Card() {
-    return(   <div class="dev-card frontend-dev">
-                        <div class="dev-avatar">
-                            <i class="fas fa-palette"></i>
+    return(   <div className="dev-card frontend-dev">
+                        <div className="dev-avatar">
+                            <i className="fas fa-palette"></i>
                         </div>
                         <h3>Frontend Developer</h3>
                         <p>HTML5, CSS3, JavaScript</p>
-                        <div class="dev-skills">
-                            <span class="skill-tag">UI/UX</span>
-                            <span class="skill-tag">Анимации</span>
-                            <span class="skill-tag">Адаптивность</span>
+                        <div className="dev-skills">
+                            <span className="skill-tag">UI/UX</span>
+                            <span className="skill-tag">Анимации</span>
+                            <span className="skill-tag">Адаптивность</span>
                         </div>
                     </div>)
 }

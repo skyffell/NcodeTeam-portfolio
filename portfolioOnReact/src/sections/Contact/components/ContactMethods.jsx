@@ -1,6 +1,8 @@
+import ContactMethod from "./ContacMethod"
+
 const ContactMethods = () => {
     return( 
-    <div class="contact-methods">
+    <div className="contact-methods">
         
         <ContactMethod />
                         

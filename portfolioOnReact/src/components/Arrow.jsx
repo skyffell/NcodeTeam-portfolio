@@ -1,7 +1,7 @@
 function Arrow(){
     return(
-        <div class="process-arrow">
-                    <i class="fas fa-arrow-right"></i>
+        <div className="process-arrow">
+                    <i className="fas fa-arrow-right"></i>
                 </div>
     )
 }

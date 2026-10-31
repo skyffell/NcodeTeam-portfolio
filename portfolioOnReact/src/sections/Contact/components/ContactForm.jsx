@@ -3,7 +3,7 @@ import FormContactInput from "./FormContactInput"
 
 const ContactForm = () =>{
     return(
-         <div class="contact-form">
+         <div className="contact-form">
                     <form id="project-form">
                         <FormContactInput />
                         

@@ -1,20 +1,20 @@
-import SectoinsHeader from "../../components/SectionsHeader"
+import SectionsHeader from "../../components/SectionsHeader"
 import StatsGrid from "./components/StatsGrid"
 import TypingDemo from "./components/TypingDemo"
 import WhyUsCard from "./components/WhyUsCard"
 
 function WhyUs() {
 
-    return(<section class="why-us" id="why">
-        <div class="container">
-            <SectoinsHeader mainText = "Почему N-code Team?"/>
+    return(<section className="why-us" id="why">
+        <div className="container">
+            <SectionsHeader mainText = "Почему N-code Team?"/>
             
-            <div class="comparison">
+            <div className="comparison">
                 <WhyUsCard 
                 version = "single" 
                 titles = {['Ограниченный стек технологий','Медленная разработка','Узкая специализация','Сложность масштабирования']}/>
                 
-                <div class="vs-circle">
+                <div className="vs-circle">
                     VS
                 </div>
                 

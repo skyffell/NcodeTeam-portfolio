@@ -1,13 +1,13 @@
-import SectoinsHeader from "../../components/SectionsHeader"
+import SectionsHeader from "../../components/SectionsHeader"
 import StackCard from "./components/StackCard"
 
 function TechStack(){
-return(<section class="tech-stack" id="tech">
-        <div class="container">
+return(<section className="tech-stack" id="tech">
+        <div className="container">
           
-          <SectoinsHeader mainText = "Наш стек технологий"/>
+          <SectionsHeader mainText = "Наш стек технологий"/>
             
-            <div class="stack-container">
+            <div className="stack-container">
                 
                 <StackCard />
                 

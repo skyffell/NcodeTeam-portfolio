@@ -1,10 +1,10 @@
-import Arrow from "../../components/Arrow";
-import Card from "../../components/Card";
+import Arrow from "../../../components/Arrow";
+import Card from "../../../components/Card";
 
 function StepsList(){
     return(
 
-         <div class="workflow">
+         <div className="workflow">
                 
                 <Card 
                  version = "step" 

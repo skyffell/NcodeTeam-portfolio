@@ -1,11 +1,11 @@
-import SectoinsHeader from "../../components/SectionsHeader"
-import StepsList from "./StepsList"
+import SectionsHeader from "../../components/SectionsHeader"
+import StepsList from "./components/StepsList"
 
 function AboutTeam() {
-    return(<section class="about-team" id="about">
-        <div class="container">
+    return(<section className="about-team" id="about">
+        <div className="container">
           
-        <SectoinsHeader 
+        <SectionsHeader 
             mainText = "Наш рабочий процесс" 
             subText = "Слаженная работа двух специалистов для достижения лучшего результата"/>
 

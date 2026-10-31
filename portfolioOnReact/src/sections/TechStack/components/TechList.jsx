@@ -1,17 +1,14 @@
-import { version } from "react"
 import TechItem from "./TechItem"
+
 const TechList = () => {
     return(
-        <div>
-         <SectionsHeader mainText = {mainText} version ={version}/>
-     <div class="tech-items">
-        <TechItem />
+        <div className="tech-items">
+            <TechItem />
                         
-        <TechItem />
+            <TechItem />
                         
-        <TechItem />
-    </div>
-    </div>
+            <TechItem />
+        </div>
     )
 }
 export default TechList

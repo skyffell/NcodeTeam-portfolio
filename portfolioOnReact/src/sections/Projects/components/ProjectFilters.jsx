@@ -1,6 +1,7 @@
-import Button from '../../components/Button'
+import Button from '../../../components/Button'
+
 const ProjectFilters = () => {
-    return( <div class="project-filters">
+    return( <div className="project-filters">
                 <Button />
 
                 <Button />
