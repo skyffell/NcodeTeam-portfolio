@@ -1,7 +1,9 @@
-function Button(){
-    return(  <a href="#projects" className="cta-button">
-                    <span>Наши работы</span>
-                    <i className="fas fa-arrow-down"></i>
-                </a>)
+import Arrow from "./Arrow"
+function Button(props) {
+    const { version, title, href = "#projects" } = props
+    return (<a href={href} className={`cta-button ${version ? `cta-${version}` : ''}`}>
+        <span>{title}</span>
+        <Arrow orientation="down" className="" />
+    </a>)
 }
 export default Button

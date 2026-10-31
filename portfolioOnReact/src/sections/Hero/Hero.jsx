@@ -5,43 +5,45 @@ import Ellipse from "../../components/Ellipse"
 import SectionsHeader from "../../components/SectionsHeader"
 function Hero() {
 
-    return( 
+  return (
     <section className="hero" id="home">
-        <div className="container">
-            <div className="team-presentation">
-               
-            <SectionsHeader 
-            mainText = "N-CODE TEAM" 
-            subText = "От пикселя до API - создаем цифровые решения под ключ"> 
-            </SectionsHeader>
+      <div className="binary-background"></div>
+      <div className="container">
+        <div className="team-presentation">
 
-                <div className="developer-cards">
-                 
-                     <Card 
-                     version = "frontend" 
-                     title = "Frontend Developer"
-                    skills = {['UI/UX','Анимации','Адаптивность']}
-                     iconsClass = "fa-palette"
-                     />
+          <SectionsHeader
+            mainText="N-CODE TEAM"
+            subText="От пикселя до API - создаем цифровые решения под ключ"
+            isHero={true}
+          />
 
-                    <Ellipse version = "synergy"/>
-                    
-                   <Card
-                   version = "backend" 
-                     title = "Backend Developer"
-                     skills = {['API','Базы данных','Архитектура']}
-                     iconsClass = "fa-server" 
-                   />
+          <div className="developer-cards">
+            <Card
+              version="frontend"
+              title="Frontend Developer"
+              text="HTML5, CSS3, JavaScript"
+              skills={['UI/UX', 'Анимации', 'Адаптивность']}
+              iconsClass="fa-palette"
+            />
 
-                </div>
+            <Ellipse version="synergy" title="Синергия" />
 
-              <Button title = "Наши работы ↓" version = "hero"/>
+            <Card
+              version="backend"
+              title="Backend Developer"
+              text="Python, Flask, FastAPI"
+              skills={['API', 'Базы данных', 'Архитектура']}
+              iconsClass="fa-server"
+            />
+          </div>
 
-            </div>
-            <Arrow orientation = "down"/>
+          <Button title="Наши работы " version="hero" />
+
         </div>
-        
+        <Arrow orientation="down" className="scroll-indicator" />
+      </div>
+
     </section>
-)
+  )
 }
 export default Hero
