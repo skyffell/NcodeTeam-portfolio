@@ -1,13 +1,14 @@
 import TechList from "./TechList"
 
-const StackCard = () =>{
-    return(
+const StackCard = (props) => {
+    const { version, iconsClass, title, items } = props;
+    return (
         <div className="stack-category">
-            <h3 className="category-title frontend-title">
-                <i className="fas fa-desktop"></i>
-                Frontend
+            <h3 className={`category-title ${version}-title`}>
+                <i className={iconsClass}></i>
+                {title}
             </h3>
-            <TechList />
+            <TechList items={items} />
         </div>
     )
 }

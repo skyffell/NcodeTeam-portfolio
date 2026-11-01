@@ -1,13 +1,12 @@
 import TechItem from "./TechItem"
 
-const TechList = () => {
-    return(
+const TechList = (props) => {
+    const { items } = props;
+    return (
         <div className="tech-items">
-            <TechItem />
-                        
-            <TechItem />
-                        
-            <TechItem />
+            {items.map(item => (
+                <TechItem key={item.id} {...item} />
+            ))}
         </div>
     )
 }
