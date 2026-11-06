@@ -1,7 +1,7 @@
-import SectionsHeader from "../../components/SectionsHeader";
+import SectionsHeader from "@components/SectionsHeader";
 import ProjectCard from "./components/ProjectCard";
 import ProjectFilters from "./components/ProjectFilters";
-import { projectsData, projectFilters } from "../../data";
+import { projectsData, projectFilters } from "@data";
 
 function Projects({
     projects = projectsData,

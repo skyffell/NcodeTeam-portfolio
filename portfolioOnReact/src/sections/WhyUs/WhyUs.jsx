@@ -1,9 +1,9 @@
-import SectionsHeader from "../../components/SectionsHeader";
+import SectionsHeader from "@components/SectionsHeader";
 import StatsGrid from "./components/StatsGrid";
 import TypingDemo from "./components/TypingDemo";
 import WhyUsCard from "./components/WhyUsCard";
-import Ellipse from "../../components/Ellipse";
-import { comparisonData, statsData } from "../../data";
+import Ellipse from "@components/Ellipse";
+import { comparisonData, statsData } from "@data";
 
 function WhyUs() {
     return (

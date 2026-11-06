@@ -1,4 +1,4 @@
-import SectionsHeader from "../../components/SectionsHeader";
+import SectionsHeader from "@components/SectionsHeader";
 import ContactForm from "./components/ContactForm";
 import ContactMethods from "./components/ContactMethods";
 import LinkList from "./components/LinkList";
@@ -8,7 +8,7 @@ import {
     contactMethodsData,
     socialLinksData,
     contactFormFieldsData
-} from "../../data";
+} from "@data";
 
 function Contact() {
     return (

@@ -1,6 +1,6 @@
-import SectionsHeader from "../../components/SectionsHeader";
+import SectionsHeader from "@components/SectionsHeader";
 import StackCard from "./components/StackCard";
-import { techStackData } from "../../data";
+import { techStackData } from "@data";
 
 function TechStack({ categories = techStackData }) {
     return (

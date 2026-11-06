@@ -1,7 +1,7 @@
 import React from "react";
-import Arrow from "../../../components/Arrow";
-import Card from "../../../components/Card";
-import { workflowData } from "../../../data";
+import Arrow from "@components/Arrow";
+import Card from "@components/Card";
+import { workflowData } from "@data";
 
 function StepsList({ steps = workflowData }) {
     return (

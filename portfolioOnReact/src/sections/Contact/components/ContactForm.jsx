@@ -1,4 +1,4 @@
-import Button from "../../../components/Button";
+import Button from "@components/Button";
 import FormContactInput from "./FormContactInput";
 
 const defaultFields = [
@@ -45,7 +45,6 @@ const ContactForm = (props) => {
         onSubmit
     } = props;
 
-    // Поддержка массивов inputTitle / inputType, если они передаются из родителя
     const resolvedFields = inputTitle
         ? inputTitle.map((title, index) => {
               const explicitType = inputType && inputType[index];

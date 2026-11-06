@@ -1,4 +1,4 @@
-import Button from "../../../components/Button";
+import Button from "@components/Button";
 
 const defaultLinks = [
     { iconClass: "fab fa-github", url: "#" },
