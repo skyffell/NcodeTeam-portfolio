@@ -1,8 +1,12 @@
 function Ellipse(props) {
-    const { version, title } = props;
-    return (<div className={version}>
-        <div className="pulse-circle"></div>
-        {title && <span>{title}</span>}
-    </div>)
+    const { version, title, hasPulse = false } = props;
+
+    return (
+        <div className={version}>
+            {hasPulse && <div className="pulse-circle"></div>}
+            {title && <span>{title}</span>}
+        </div>
+    );
 }
-export default Ellipse
+
+export default Ellipse;

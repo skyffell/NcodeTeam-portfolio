@@ -1,12 +1,15 @@
-const WhyUsCard = () => {
-    return(<div className="solo-dev comparison-card">
-                    <h4>Один разработчик</h4>
-                    <ul>
-                        <li><i className="fas fa-times"></i> Ограниченный стек технологий</li>
-                        <li><i className="fas fa-times"></i> Медленная разработка</li>
-                        <li><i className="fas fa-times"></i> Узкая специализация</li>
-                        <li><i className="fas fa-times"></i> Сложность масштабирования</li>
-                    </ul>
-                </div>)
+const WhyUsCard = (props) => {
+    const { version, title, texts = [] } = props
+    const isTeam = version === "n-code-team" || version === "our-team";
+    return (<div className={`comparison-card ${isTeam ? "our-team highlighted" : "solo-dev"}`}>
+        <h4>{title}</h4>
+        <ul>
+            {texts.map((text, index) => (
+                <li key={index}>
+                    <i className={`fas ${isTeam ? "fa-check" : "fa-times"}`}></i> {text}
+                </li>
+            ))}
+        </ul>
+    </div>)
 }
 export default WhyUsCard

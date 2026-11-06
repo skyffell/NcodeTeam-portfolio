@@ -26,7 +26,7 @@ function Hero() {
               iconsClass="fa-palette"
             />
 
-            <Ellipse version="synergy" title="Синергия" />
+            <Ellipse version="synergy" title="Синергия" hasPulse={true} />
 
             <Card
               version="backend"
