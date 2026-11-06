@@ -1,16 +1,18 @@
-import ContactMethod from "./ContacMethod"
+import ContactMethod from "./ContacMethod";
 
-const ContactMethods = () => {
-    return( 
-    <div className="contact-methods">
-        
-        <ContactMethod />
-                        
-        <ContactMethod />
+const ContactMethods = (props) => {
+    const { items = [] } = props;
+    return (
+        <div className="contact-methods">
+            {items.map((item, index) => (
+                <ContactMethod
+                    key={item.id || item.title || index}
+                    iconsClass={item.iconsClass}
+                    title={item.title}
+                />
+            ))}
+        </div>
+    );
+};
 
-        <ContactMethod />
-    
-    </div>
-                    )
-}
-export default ContactMethods
+export default ContactMethods;

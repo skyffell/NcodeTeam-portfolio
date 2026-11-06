@@ -1,12 +1,15 @@
 const StatsGrid = (props) => {
-    const { items } = props
-    return (<div className="stats-grid">
-        {items.map((title, target) => {
-            <div className="stat-item">
-                <div className="stat-number" data-target={target}>0</div>
-                <div className="stat-label">{title}</div>
-            </div>
-        })}
-    </div>)
-}
-export default StatsGrid
+    const { items = [] } = props;
+    return (
+        <div className="stats-grid">
+            {items.map((item, index) => (
+                <div key={item.id || item.title || index} className="stat-item">
+                    <div className="stat-number" data-target={item.target}>0</div>
+                    <div className="stat-label">{item.title}</div>
+                </div>
+            ))}
+        </div>
+    );
+};
+
+export default StatsGrid;

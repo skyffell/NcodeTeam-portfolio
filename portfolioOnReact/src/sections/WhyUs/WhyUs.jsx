@@ -1,38 +1,36 @@
-import SectionsHeader from "../../components/SectionsHeader"
-import StatsGrid from "./components/StatsGrid"
-import TypingDemo from "./components/TypingDemo"
-import WhyUsCard from "./components/WhyUsCard"
-import Ellipse from "../../components/Ellipse"
+import SectionsHeader from "../../components/SectionsHeader";
+import StatsGrid from "./components/StatsGrid";
+import TypingDemo from "./components/TypingDemo";
+import WhyUsCard from "./components/WhyUsCard";
+import Ellipse from "../../components/Ellipse";
+import { comparisonData, statsData } from "../../data";
 
 function WhyUs() {
+    return (
+        <section className="why-us" id="why">
+            <div className="container">
+                <SectionsHeader mainText="Почему N-code Team?" />
 
-    return (<section className="why-us" id="why">
-        <div className="container">
-            <SectionsHeader mainText="Почему N-code Team?" />
+                <div className="comparison">
+                    <WhyUsCard
+                        version={comparisonData.solo.version}
+                        title={comparisonData.solo.title}
+                        texts={comparisonData.solo.texts}
+                    />
+                    <Ellipse title="VS" version="vs-circle" />
+                    <WhyUsCard
+                        version={comparisonData.team.version}
+                        title={comparisonData.team.title}
+                        texts={comparisonData.team.texts}
+                    />
+                </div>
 
-            <div className="comparison">
-                <WhyUsCard
-                    version="single"
-                    title="Один разработчик"
-                    texts={['Ограниченный стек технологий', 'Медленная разработка', 'Узкая специализация', 'Сложность масштабирования']} />
-                <Ellipse title="VS" version="vs-circle" />
-                <WhyUsCard
-                    version="n-code-team"
-                    title="Команда N-Code"
-                    texts={['полный цикл разработки', 'Контроль качества на каждом этапе', 'Широкая экспертиза', 'Быстрое прототипирование']}
-                />
-
+                <StatsGrid items={statsData} />
             </div>
 
-            <StatsGrid items={[
-                { title: "Завершенных проектов", target: 12 },
-                { title: "Строк кода", target: 50000 },
-                { title: "API endpoints", target: 45 },
-                { title: "Довольных клиентов", target: 8 }]} />
-
-        </div>
-
-        <TypingDemo />
-    </section>)
+            <TypingDemo />
+        </section>
+    );
 }
-export default WhyUs
+
+export default WhyUs;

@@ -1,24 +1,27 @@
-import SectionsHeader from "../../components/SectionsHeader"
-import ProjectCard from "./components/ProjectCard"
-import ProjectFilters from "./components/ProjectFilters"
+import SectionsHeader from "../../components/SectionsHeader";
+import ProjectCard from "./components/ProjectCard";
+import ProjectFilters from "./components/ProjectFilters";
+import { projectsData, projectFilters } from "../../data";
 
-function Projects() {
-    return(
+function Projects({
+    projects = projectsData,
+    filters = projectFilters
+}) {
+    return (
         <section className="projects" id="projects">
-        <div className="container">
-            <SectionsHeader mainText = "Наши проекты"/>
-            
-            <ProjectFilters filters = {['Все проекты','Fullstack','Frontend','Backend']}/>
-            
-            <div className="project-grid">
-                
-                <ProjectCard />
-                
-                <ProjectCard />
+            <div className="container">
+                <SectionsHeader mainText="Наши проекты" />
 
+                <ProjectFilters filters={filters} />
+
+                <div className="project-grid">
+                    {projects.map((project) => (
+                        <ProjectCard key={project.id} {...project} />
+                    ))}
+                </div>
             </div>
-        </div>
-    </section>
-    )
+        </section>
+    );
 }
-export default Projects
+
+export default Projects;
