@@ -9,6 +9,8 @@ import { comparisonData, statsData } from "@data";
 import styles from "./WhyUs.module.scss";
 
 function WhyUs() {
+    const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
     return (
         <section className={styles.whyUs} id="why">
             <div className="container">
@@ -17,9 +19,9 @@ function WhyUs() {
                 <div className={styles.comparison}>
                     {/* Карточка одного разработчика */}
                     <motion.div
-                        style={{ flex: 1, minWidth: "300px", display: "flex" }}
-                        initial={{ opacity: 0, x: -70, scale: 0.9 }}
-                        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                        style={{ flex: 1, minWidth: "min(300px, 100%)", width: "100%", display: "flex" }}
+                        initial={{ opacity: 0, x: isMobile ? 0 : -70, y: isMobile ? 30 : 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{
                             type: "spring",
@@ -57,9 +59,9 @@ function WhyUs() {
 
                     {/* Карточка команды N-code Team */}
                     <motion.div
-                        style={{ flex: 1, minWidth: "300px", display: "flex" }}
-                        initial={{ opacity: 0, x: 70, scale: 0.9 }}
-                        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                        style={{ flex: 1, minWidth: "min(300px, 100%)", width: "100%", display: "flex" }}
+                        initial={{ opacity: 0, x: isMobile ? 0 : 70, y: isMobile ? 30 : 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{
                             type: "spring",

@@ -14,6 +14,8 @@ import {
 import styles from "./Contact.module.scss";
 
 function Contact() {
+    const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
     return (
         <section className={styles.contact} id="contact">
             <div className="container">
@@ -21,8 +23,8 @@ function Contact() {
                     {/* Левая колонка со способами связи */}
                     <motion.div
                         className={styles.contactInfo}
-                        initial={{ opacity: 0, x: -60, scale: 0.95 }}
-                        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                        initial={{ opacity: 0, x: isMobile ? 0 : -60, y: isMobile ? 30 : 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
                         viewport={{ once: true, margin: "-40px" }}
                         transition={{
                             type: "spring",
@@ -41,8 +43,8 @@ function Contact() {
 
                     {/* Правая колонка с интерактивной формой */}
                     <motion.div
-                        initial={{ opacity: 0, x: 60, scale: 0.95 }}
-                        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                        initial={{ opacity: 0, x: isMobile ? 0 : 60, y: isMobile ? 40 : 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
                         viewport={{ once: true, margin: "-40px" }}
                         transition={{
                             type: "spring",
