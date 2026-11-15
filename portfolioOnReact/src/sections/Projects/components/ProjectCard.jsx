@@ -1,7 +1,9 @@
+// Карточка проекта со сводкой информации, превью и ссылками
 import Contribution from "./Contribution";
 import ProjectPreview from "./ProjectPreview";
 import TechUsed from "./TechUsed";
 import ProjectLinks from "./ProjectLinks";
+import styles from "./ProjectCard.module.scss";
 
 const defaultContribution = [
     { version: "frontend", title: "Frontend: Алексей", iconClass: "fas fa-palette" },
@@ -26,10 +28,10 @@ const ProjectCard = (props) => {
     } = props;
 
     return (
-        <div className="project-card" data-category={category}>
+        <div className={styles.projectCard} data-category={category}>
             <ProjectPreview {...preview} />
 
-            <div className="project-info">
+            <div className={styles.projectInfo}>
                 <h3>{title}</h3>
                 <p>{description}</p>
 

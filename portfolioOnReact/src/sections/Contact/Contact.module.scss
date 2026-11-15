@@ -1,0 +1,27 @@
+// Стили секции Contact (Контакты и форма связи)
+
+.contact {
+  padding: 6rem 0;
+  position: relative;
+
+  @include mobile {
+    padding: 4rem 0;
+  }
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,4 +1,6 @@
+// Навигационные ссылки в подвале сайта
 import Button from "@components/Button";
+import styles from "./FooterLinks.module.scss";
 
 const defaultLinks = [
     { title: "Главная", href: "#home" },
@@ -18,13 +20,14 @@ const FooterLinks = (props) => {
         : links;
 
     return (
-        <div className="footer-links">
+        <div className={styles.footerLinks}>
             {normalizedLinks.map((link, index) => (
                 <Button
                     key={link.title || index}
                     as="a"
                     href={link.href}
                     variant="clean"
+                    className={styles.footerLink}
                 >
                     {link.title}
                 </Button>

@@ -1,3 +1,6 @@
+// Поле формы контактов (текстовое, селект или текстовая область)
+import styles from "./FormContactInput.module.scss";
+
 const FormContactInput = ({
     label,
     type = "text",
@@ -6,7 +9,9 @@ const FormContactInput = ({
     placeholder = "",
     required = false,
     options = [],
-    rows = 4
+    rows = 4,
+    value,
+    onChange
 }) => {
     const inputId = id || name || (label ? label.toLowerCase().replace(/[^a-zа-я0-9]/gi, "_") : "field");
 
@@ -19,13 +24,21 @@ const FormContactInput = ({
                     rows={rows}
                     placeholder={placeholder}
                     required={required}
+                    value={value}
+                    onChange={onChange}
                 />
             );
         }
 
         if (type === "select") {
             return (
-                <select id={inputId} name={name || inputId} required={required} defaultValue="">
+                <select
+                    id={inputId}
+                    name={name || inputId}
+                    required={required}
+                    value={value ?? ""}
+                    onChange={onChange}
+                >
                     <option value="" disabled>
                         Выберите тип проекта...
                     </option>
@@ -49,12 +62,14 @@ const FormContactInput = ({
                 name={name || inputId}
                 placeholder={placeholder}
                 required={required}
+                value={value}
+                onChange={onChange}
             />
         );
     };
 
     return (
-        <div className="form-group">
+        <div className={styles.formGroup}>
             {label && <label htmlFor={inputId}>{label}</label>}
             {renderField()}
         </div>

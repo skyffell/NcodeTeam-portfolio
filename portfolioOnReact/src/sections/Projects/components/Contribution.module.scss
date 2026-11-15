@@ -1,0 +1,28 @@
+// Стили блока вклада участников команды в проект
+
+.contribution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contribItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+
+  i {
+    width: 16px;
+    text-align: center;
+  }
+
+  &.frontend {
+    color: $accent-frontend;
+  }
+
+  &.backend {
+    color: $accent-backend;
+  }
+}

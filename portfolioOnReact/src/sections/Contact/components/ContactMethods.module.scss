@@ -1,0 +1,41 @@
+// Стили карточек способов связи с командой
+
+.contactMethods {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.contactMethod {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.1rem 1.4rem;
+  @include glassmorphism;
+  border-radius: $radius-md;
+  color: $text-primary;
+  font-size: 0.95rem;
+  border: 1px solid $border-color;
+  transition: transform $transition-normal, border-color $transition-normal, box-shadow $transition-normal;
+
+  &:hover {
+    transform: translateX(8px);
+    border-color: rgba($accent-frontend, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.1);
+  }
+
+  @include mobile {
+    &:hover {
+      transform: none;
+    }
+  }
+
+  i {
+    width: 22px;
+    font-size: 1.15rem;
+    color: $accent-frontend;
+    text-align: center;
+    flex-shrink: 0;
+  }
+}

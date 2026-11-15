@@ -2,15 +2,77 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>N-code Team | Fullstack разработка</title>
+
+    <!-- Основные мета-теги SEO -->
+    <title>N-code Team | Команда Fullstack разработки (Python, React)</title>
+    <meta name="title" content="N-code Team | Команда Fullstack разработки (Python, React)" />
+    <meta name="description" content="N-code Team — профессиональная веб-разработка под ключ: от UX/UI дизайна и адаптивного фронтенда на React до надежного backend API на Python (FastAPI, Flask) и баз данных." />
+    <meta name="keywords" content="fullstack разработка, веб-разработка, react, python, fastapi, flask, postgresql, разработка сайтов, создание api, n-code team" />
+    <meta name="author" content="N-code Team" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://n-code.dev/" />
+
+    <!-- Фавиконка и оформление браузера -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0a0b10" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Open Graph (для превью ссылок в Telegram, VK, Discord, WhatsApp) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://n-code.dev/" />
+    <meta property="og:site_name" content="N-code Team" />
+    <meta property="og:title" content="N-code Team | Fullstack разработка цифровых решений" />
+    <meta property="og:description" content="От дизайна до API: создаем современные веб-приложения и высоконагруженные сервисы на Python и React." />
+    <meta property="og:image" content="/og-image.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://n-code.dev/" />
+    <meta name="twitter:title" content="N-code Team | Fullstack разработка цифровых решений" />
+    <meta name="twitter:description" content="От дизайна до API: создаем современные веб-приложения и высоконагруженные сервисы на Python и React." />
+    <meta name="twitter:image" content="/og-image.svg" />
+
+    <!-- Микроразметка Schema.org (JSON-LD) для поисковых систем Google и Яндекс -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "N-code Team",
+        "description": "Команда Fullstack разработки на Python и React под ключ.",
+        "url": "https://n-code.dev",
+        "sameAs": [
+          "https://github.com",
+          "https://t.me"
+        ],
+        "knowsAbout": [
+          "React",
+          "Python",
+          "FastAPI",
+          "Flask",
+          "PostgreSQL",
+          "UI/UX Design",
+          "Web Development"
+        ]
+      }
+    </script>
+
+    <!-- Шрифты и иконки -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
   <body>
+    <noscript>
+      <div style="padding: 2rem; text-align: center; color: #fff; background: #0a0b10;">
+        <h1>N-code Team — Fullstack разработка</h1>
+        <p>Для полноценной интерактивной работы портфолио, пожалуйста, включите JavaScript в браузере.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

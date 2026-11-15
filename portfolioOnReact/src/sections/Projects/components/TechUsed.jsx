@@ -1,9 +1,12 @@
+// Список тегов технологий проекта
+import styles from "./TechUsed.module.scss";
+
 const TechUsed = (props) => {
     const { titles = [] } = props;
     return (
-        <div className="tech-used">
+        <div className={styles.techUsed}>
             {titles.map((title, index) => (
-                <span key={title || index} className="tech-tag">
+                <span key={title || index} className={styles.techTag}>
                     {title}
                 </span>
             ))}

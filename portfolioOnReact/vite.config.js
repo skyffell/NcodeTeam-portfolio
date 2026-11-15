@@ -14,4 +14,11 @@ export default defineConfig({
       '@styles': fileURLToPath(new URL('./src/styles', import.meta.url)),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@styles/variables" as *; @use "@styles/mixins" as *;`,
+      },
+    },
+  },
 })

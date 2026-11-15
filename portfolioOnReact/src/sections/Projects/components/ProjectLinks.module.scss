@@ -1,0 +1,39 @@
+// Стили кнопок-ссылок проекта (Демо, Код, Документация)
+
+.projectLinks {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: $radius-sm;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: $text-primary;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid $border-color;
+  transition: all $transition-normal;
+
+  &:hover {
+    background: rgba(0, 212, 255, 0.08);
+    border-color: $accent-frontend;
+    color: $accent-frontend;
+    transform: translateY(-2px);
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}

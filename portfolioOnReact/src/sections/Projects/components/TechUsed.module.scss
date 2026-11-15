@@ -1,0 +1,24 @@
+// Стили списка используемых технологий в проекте
+
+.techUsed {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.techTag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.3rem 0.75rem;
+  border-radius: $radius-full;
+  font-size: 0.8rem;
+  font-family: $font-code;
+  color: $text-secondary;
+  transition: border-color $transition-fast, color $transition-fast;
+
+  &:hover {
+    border-color: rgba($accent-frontend, 0.4);
+    color: $accent-frontend;
+  }
+}

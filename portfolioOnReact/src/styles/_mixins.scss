@@ -1,0 +1,67 @@
+// Миксины дизайн-системы N-code
+@use './variables' as *;
+
+// Медиа-запросы для адаптивности
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop-sm {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+// Вспомогательные flex-миксины
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Визуальные эффекты
+@mixin glassmorphism($bg: rgba(22, 27, 39, 0.65), $blur: 16px, $border: rgba(255, 255, 255, 0.08)) {
+  background: $bg;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid $border;
+}
+
+@mixin gradient-text($gradient: linear-gradient(135deg, $accent-frontend, $accent-backend)) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin card-hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 
+                0 0 30px -10px rgba(0, 212, 255, 0.15);
+  }
+}

@@ -1,0 +1,28 @@
+// Стили подвала сайта (Footer)
+
+.footer {
+  background: $bg-secondary;
+  padding: 4rem 0 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid $border-color;
+  position: relative;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.5rem;
+  text-align: center;
+
+  p {
+    color: $text-muted;
+    font-size: 0.9rem;
+  }
+}

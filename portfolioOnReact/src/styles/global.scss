@@ -1,0 +1,64 @@
+// Глобальные стили
+@use './variables' as *;
+@use './mixins' as *;
+@use './typography' as *;
+
+:root {
+  --bg-primary: #{$bg-primary};
+  --bg-secondary: #{$bg-secondary};
+  --accent-frontend: #{$accent-frontend};
+  --accent-backend: #{$accent-backend-orange};
+  --accent-backend-purple: #{$accent-backend};
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --card-bg: #{$bg-card};
+  --success: #{$success};
+  --border-radius: #{$radius-md};
+  --transition: #{$transition-normal};
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $bg-primary;
+  color: $text-primary;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include mobile {
+    padding: 0 1.25rem;
+  }
+}
+
+// Кастомный скроллбар
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: $radius-full;
+
+  &:hover {
+    background: rgba($accent-frontend, 0.5);
+  }
+}

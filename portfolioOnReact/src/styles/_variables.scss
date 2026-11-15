@@ -1,0 +1,44 @@
+// Базовые переменные дизайн-системы N-code
+
+// Цветовая палитра: темная тема и неоновые акценты
+$bg-primary: #0a0b10;
+$bg-secondary: #12151f;
+$bg-tertiary: #1a1e2d;
+$bg-card: rgba(22, 27, 39, 0.7);
+
+// Акцентные цвета
+$accent-frontend: #00d4ff;
+$accent-backend: #8b5cf6;
+$accent-backend-orange: #ff6b35; // совместимость со старыми стилями
+$accent-gradient: linear-gradient(135deg, $accent-frontend, $accent-backend);
+$accent-gradient-orange: linear-gradient(135deg, $accent-frontend, $accent-backend-orange);
+
+// Цвета текста
+$text-primary: #f1f5f9;
+$text-secondary: #94a3b8;
+$text-muted: #64748b;
+
+// Границы и статусы
+$border-color: rgba(255, 255, 255, 0.08);
+$border-color-hover: rgba(0, 212, 255, 0.35);
+$success: #10b981;
+$error: #ef4444;
+$warning: #f59e0b;
+
+// Радиусы скругления
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 18px;
+$radius-full: 9999px;
+
+// Шрифты
+$font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-heading: 'Space Grotesk', 'Inter', sans-serif;
+$font-code: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+// Переходы и тени
+$transition-fast: 0.15s ease;
+$transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+$shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+$shadow-glow-cyan: 0 0 25px rgba(0, 212, 255, 0.2);
+$shadow-glow-purple: 0 0 25px rgba(139, 92, 246, 0.2);

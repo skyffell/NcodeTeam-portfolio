@@ -1,0 +1,53 @@
+// Стили полей ввода формы
+
+.formGroup {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: $text-primary;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    background: rgba(18, 21, 31, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: $radius-md;
+    color: $text-primary;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all $transition-fast;
+
+    &:focus {
+      outline: none;
+      border-color: $accent-frontend;
+      background: rgba(18, 21, 31, 1);
+      box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.15);
+    }
+
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+
+  select {
+    cursor: pointer;
+    option {
+      background: $bg-secondary;
+      color: $text-primary;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 110px;
+  }
+}

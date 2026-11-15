@@ -1,0 +1,26 @@
+// Стили ссылок навигации в подвале
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+
+  @include mobile {
+    gap: 1.25rem;
+  }
+}
+
+.footerLink {
+  color: $text-secondary;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color $transition-fast, transform $transition-fast;
+
+  &:hover {
+    color: $accent-frontend;
+    transform: translateY(-2px);
+  }
+}

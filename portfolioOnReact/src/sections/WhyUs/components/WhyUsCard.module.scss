@@ -1,0 +1,65 @@
+// Стили карточки сравнения
+
+.comparisonCard {
+  @include glassmorphism;
+  padding: 2.25rem 2rem;
+  border-radius: $radius-md;
+  flex: 1;
+  min-width: 300px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  @include mobile {
+    min-width: unset;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: $text-secondary;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  &.soloDev {
+    li i {
+      color: $error;
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+  }
+
+  &.ourTeam {
+    border-color: rgba($accent-frontend, 0.4);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.08);
+
+    &.highlighted {
+      border: 2px solid transparent;
+      background: linear-gradient($bg-secondary, $bg-secondary) padding-box,
+                  $accent-gradient border-box;
+    }
+
+    li i {
+      color: $success;
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+  }
+}

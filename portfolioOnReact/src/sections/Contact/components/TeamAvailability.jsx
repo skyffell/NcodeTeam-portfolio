@@ -1,3 +1,6 @@
+// Индикатор текущей доступности команды для новых заказов
+import styles from "./TeamAvailability.module.scss";
+
 const TeamAvailability = (props) => {
     const {
         isFree = true,
@@ -6,8 +9,12 @@ const TeamAvailability = (props) => {
     } = props;
 
     return (
-        <div className="team-availability">
-            <div className={`status-indicator ${isFree ? "available" : "busy"}`}></div>
+        <div className={styles.teamAvailability}>
+            <div
+                className={`${styles.statusIndicator} ${
+                    isFree ? styles.available : styles.busy
+                }`}
+            ></div>
             <span>{isFree ? freeText : busyText}</span>
         </div>
     );

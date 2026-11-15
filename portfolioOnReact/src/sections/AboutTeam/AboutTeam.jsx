@@ -1,9 +1,10 @@
 import SectionsHeader from "@components/SectionsHeader";
 import StepsList from "./components/StepsList";
+import styles from "./AboutTeam.module.scss";
 
 function AboutTeam() {
     return (
-        <section className="about-team" id="about">
+        <section className={styles.aboutTeam} id="about">
             <div className="container">
                 <SectionsHeader
                     mainText="Наш рабочий процесс"

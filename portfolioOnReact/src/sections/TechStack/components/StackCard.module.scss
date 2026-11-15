@@ -1,0 +1,28 @@
+// Стили карточки категории стека
+
+.stackCategory {
+  @include glassmorphism;
+  padding: 2rem;
+  border-radius: $radius-md;
+  transition: $transition-normal;
+
+  @include mobile {
+    padding: 1.5rem;
+  }
+}
+
+.categoryTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+
+  &.frontendTitle {
+    color: $accent-frontend;
+  }
+
+  &.backendTitle {
+    color: $accent-backend-orange;
+  }
+}

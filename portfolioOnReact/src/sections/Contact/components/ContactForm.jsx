@@ -1,11 +1,15 @@
+// Управляемая форма обратной связи с валидацией и анимацией
+import { useState } from "react";
+import { motion } from "framer-motion";
 import Button from "@components/Button";
 import FormContactInput from "./FormContactInput";
+import styles from "./ContactForm.module.scss";
 
 const defaultFields = [
     {
         id: "project-type",
         name: "projectType",
-        label: "Ваш проект похож на: ",
+        label: "Ваш проект похож на:",
         type: "select",
         options: ["Корпоративный сайт / Лендинг", "Веб-приложение / SaaS", "Backend / API сервис", "Другое"],
         required: true
@@ -39,58 +43,65 @@ const defaultFields = [
 const ContactForm = (props) => {
     const {
         fields = defaultFields,
-        inputTitle,
-        inputType,
         buttonTitle = "Обсудить проект",
         onSubmit
     } = props;
 
-    const resolvedFields = inputTitle
-        ? inputTitle.map((title, index) => {
-              const explicitType = inputType && inputType[index];
-              const guessedType =
-                  explicitType ||
-                  (index === 0
-                      ? "select"
-                      : index === 1
-                      ? "text"
-                      : index === 2
-                      ? "email"
-                      : "textarea");
+    const [formValues, setFormValues] = useState({});
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-              return {
-                  id: `contact-field-${index}`,
-                  name: `field_${index}`,
-                  label: title,
-                  type: guessedType,
-                  options:
-                      guessedType === "select"
-                          ? ["Корпоративный сайт / Лендинг", "Веб-приложение / SaaS", "Backend / API сервис", "Другое"]
-                          : undefined,
-                  placeholder:
-                      guessedType === "email"
-                          ? "example@mail.com"
-                          : guessedType === "textarea"
-                          ? "Опишите ваш проект..."
-                          : "",
-                  required: true
-              };
-          })
-        : fields;
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormValues((prev) => ({ ...prev, [name]: value }));
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (onSubmit) onSubmit(e);
+        if (onSubmit) {
+            onSubmit(formValues);
+        }
+        setIsSubmitted(true);
+        setTimeout(() => {
+            setIsSubmitted(false);
+            setFormValues({});
+        }, 3500);
     };
 
     return (
-        <div className="contact-form">
-            <form id="project-form" onSubmit={handleSubmit}>
-                {resolvedFields.map((field) => (
-                    <FormContactInput key={field.id || field.label} {...field} />
-                ))}
-                <Button type="submit" className="submit-btn" title={buttonTitle} />
-            </form>
+        <div className={styles.contactForm}>
+            {isSubmitted ? (
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    style={{ textAlign: "center", padding: "2rem 1rem" }}
+                >
+                    <i
+                        className="fas fa-check-circle"
+                        style={{ fontSize: "3rem", color: "#10b981", marginBottom: "1rem" }}
+                    ></i>
+                    <h3 style={{ marginBottom: "0.5rem" }}>Заявка отправлена!</h3>
+                    <p style={{ color: "#94a3b8" }}>Мы свяжемся с вами в течение нескольких часов.</p>
+                </motion.div>
+            ) : (
+                <form id="project-form" onSubmit={handleSubmit}>
+                    {fields.map((field) => (
+                        <FormContactInput
+                            key={field.id || field.name}
+                            {...field}
+                            value={formValues[field.name] || ""}
+                            onChange={handleChange}
+                        />
+                    ))}
+                    <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                        <Button
+                            type="submit"
+                            variant="clean"
+                            className={styles.submitBtn}
+                            title={buttonTitle}
+                        />
+                    </motion.div>
+                </form>
+            )}
         </div>
     );
 };

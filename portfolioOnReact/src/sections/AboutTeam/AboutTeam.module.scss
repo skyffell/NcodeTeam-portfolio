@@ -1,0 +1,10 @@
+// Стили секции AboutTeam (Рабочий процесс)
+
+.aboutTeam {
+  padding: 6rem 0;
+  position: relative;
+
+  @include mobile {
+    padding: 4rem 0;
+  }
+}

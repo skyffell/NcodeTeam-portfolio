@@ -1,0 +1,19 @@
+// Типографика
+@use './variables' as *;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: 700;
+  color: $text-primary;
+  letter-spacing: -0.02em;
+}
+
+body {
+  font-family: $font-main;
+  color: $text-primary;
+  line-height: 1.6;
+}
+
+code, kbd, pre {
+  font-family: $font-code;
+}

@@ -1,0 +1,15 @@
+// Стили компонента Arrow 
+
+.processArrow {
+  font-size: 1.5rem;
+  color: $accent-frontend;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+
+  @include mobile {
+    transform: rotate(90deg);
+    margin: 0;
+  }
+}

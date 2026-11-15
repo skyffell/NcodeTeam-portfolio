@@ -1,0 +1,47 @@
+// Стили сетки статистики
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.statItem {
+  @include glassmorphism;
+  padding: 2rem;
+  border-radius: $radius-md;
+  text-align: center;
+  @include card-hover;
+
+  @include mobile {
+    padding: 1.25rem;
+  }
+}
+
+.statNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  @include gradient-text;
+  margin-bottom: 0.5rem;
+  font-family: $font-heading;
+
+  @include mobile {
+    font-size: 2.25rem;
+  }
+}
+
+.statLabel {
+  color: $text-secondary;
+  font-size: 0.95rem;
+  font-weight: 500;
+}

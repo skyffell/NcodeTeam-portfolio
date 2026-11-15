@@ -1,0 +1,89 @@
+// Стили элемента технологии
+
+.techItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  background: rgba($bg-secondary, 0.7);
+  border: 1px solid $border-color;
+  border-radius: $radius-md;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateX(8px);
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    @include mobile {
+      transform: none;
+    }
+  }
+
+  span {
+    flex: 1;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: $text-primary;
+  }
+
+  // Цвета иконок и полос прогресса по технологиям
+  &[data-tech="html"] {
+    .techIcon, .progressBar { background: #e34f26; color: white; }
+  }
+
+  &[data-tech="css"] {
+    .techIcon, .progressBar { background: #1572b6; color: white; }
+  }
+
+  &[data-tech="js"] {
+    .techIcon, .progressBar { background: #f7df1e; color: #111; }
+  }
+
+  &[data-tech="react"] {
+    .techIcon, .progressBar { background: #61dafb; color: #111; }
+  }
+
+  &[data-tech="python"] {
+    .techIcon, .progressBar { background: #3776ab; color: white; }
+  }
+
+  &[data-tech="flask"] {
+    .techIcon, .progressBar { background: #ffffff; color: #111; }
+  }
+
+  &[data-tech="fastapi"] {
+    .techIcon, .progressBar { background: #009688; color: white; }
+  }
+
+  &[data-tech="django"] {
+    .techIcon, .progressBar { background: #44b78b; color: white; }
+  }
+}
+
+.techIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  @include flex-center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.techProgress {
+  width: 120px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: $radius-full;
+  overflow: hidden;
+
+  @include mobile {
+    width: 80px;
+  }
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: $radius-full;
+  transition: width 1s ease;
+}

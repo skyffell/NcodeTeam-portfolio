@@ -1,4 +1,6 @@
+// Компонент кнопок фильтрации проектов по категориям
 import Button from "@components/Button";
+import styles from "./ProjectFilters.module.scss";
 
 const ProjectFilters = (props) => {
     const {
@@ -8,12 +10,12 @@ const ProjectFilters = (props) => {
     } = props;
 
     return (
-        <div className="project-filters">
+        <div className={styles.projectFilters}>
             {filters.map((filter, index) => (
                 <Button
                     key={filter || index}
                     variant="filter"
-                    className={activeFilter === filter ? "active" : ""}
+                    className={`${styles.filterBtn} ${activeFilter === filter ? styles.active : ""}`.trim()}
                     onClick={() => onFilterChange && onFilterChange(filter)}
                 >
                     {filter}

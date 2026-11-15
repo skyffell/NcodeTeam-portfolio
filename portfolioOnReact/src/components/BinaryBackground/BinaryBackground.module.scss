@@ -1,0 +1,28 @@
+// Стили бинарного фона
+
+.binaryWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.overlayGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 40%, rgba(10, 11, 16, 0.4) 0%, rgba(10, 11, 16, 0.85) 85%);
+  pointer-events: none;
+}

@@ -1,4 +1,6 @@
+// Универсальный полиморфный компонент кнопки и ссылки
 import Arrow from "./Arrow";
+import styles from "./Button.module.scss";
 
 function Button(props) {
     const {
@@ -28,18 +30,13 @@ function Button(props) {
     const isProjectLink = currentVariant === "project-link";
     const isSocial = currentVariant === "social";
     const isClean = currentVariant === "clean" || currentVariant === "none";
+    const isHero = currentVariant === "hero";
 
-    let baseClass = "cta-button";
-    if (isFilter) {
-        baseClass = "filter-btn";
-    } else if (isProjectLink) {
-        baseClass = "project-link";
-    } else if (isSocial) {
-        baseClass = "social-link";
-    } else if (isClean) {
+    let baseClass = styles.button;
+    if (isHero) {
+        baseClass = `${styles.button} ${styles.heroButton}`;
+    } else if (isClean || isFilter || isProjectLink || isSocial) {
         baseClass = "";
-    } else if (currentVariant) {
-        baseClass = `cta-button cta-${currentVariant}`;
     }
 
     const combinedClassName = `${baseClass} ${className}`.trim();

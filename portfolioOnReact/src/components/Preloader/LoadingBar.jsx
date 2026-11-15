@@ -1,11 +1,15 @@
-const LoadingBar = () =>{
-    return(
-        <div className="loading-container"> 
-            <div className="loading-bar"> 
-              <div className="loading-progress"></div> 
-            </div> 
-            <div className="loading-text">Loading portfolio...</div> 
-          </div> 
-    )
-}
-export default LoadingBar
+// Индикатор прогресса загрузки
+import styles from "./Preloader.module.scss";
+
+const LoadingBar = () => {
+    return (
+        <div className={styles.loadingContainer}>
+            <div className={styles.loadingBar}>
+                <div className={styles.loadingProgress}></div>
+            </div>
+            <div className={styles.loadingText}>Загрузка портфолио...</div>
+        </div>
+    );
+};
+
+export default LoadingBar;

@@ -1,0 +1,135 @@
+// Стили компонента Card 
+
+// Карточка шага рабочего процесса 
+.processStep {
+  @include glassmorphism;
+  padding: 2rem;
+  border-radius: $radius-md;
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  @include card-hover;
+
+  @include tablet {
+    padding: 1.5rem;
+    min-width: 180px;
+  }
+
+  @include mobile {
+    width: 100%;
+    min-width: unset;
+  }
+
+  h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+  }
+
+  p {
+    color: $text-secondary;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+.stepIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: $accent-gradient;
+  @include flex-center;
+  margin: 0 auto 1.25rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.stepTech {
+  @include flex-center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  span {
+    background: $bg-secondary;
+    border: 1px solid $border-color;
+    padding: 0.25rem 0.65rem;
+    border-radius: $radius-full;
+    font-size: 0.8rem;
+    color: $text-secondary;
+  }
+}
+
+// Карточка разработчика (Hero)
+.devCard {
+  @include glassmorphism;
+  padding: 2rem;
+  border-radius: $radius-md;
+  text-align: center;
+  width: 280px;
+  @include card-hover;
+
+  @include tablet {
+    width: 250px;
+    padding: 1.5rem;
+  }
+
+  @include mobile {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  p {
+    color: $text-secondary;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  &.frontendDev {
+    border-color: rgba($accent-frontend, 0.4);
+
+    .devAvatar {
+      background: linear-gradient(135deg, rgba($accent-frontend, 0.2), transparent);
+      color: $accent-frontend;
+      border: 1px solid rgba($accent-frontend, 0.3);
+    }
+  }
+
+  &.backendDev {
+    border-color: rgba($accent-backend-orange, 0.4);
+
+    .devAvatar {
+      background: linear-gradient(135deg, rgba($accent-backend-orange, 0.2), transparent);
+      color: $accent-backend-orange;
+      border: 1px solid rgba($accent-backend-orange, 0.3);
+    }
+  }
+}
+
+.devAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  @include flex-center;
+  margin: 0 auto 1.25rem;
+  font-size: 2rem;
+}
+
+.devSkills {
+  @include flex-center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  .skillTag {
+    background: $bg-secondary;
+    border: 1px solid $border-color;
+    padding: 0.3rem 0.8rem;
+    border-radius: $radius-full;
+    font-size: 0.8rem;
+    color: $text-secondary;
+  }
+}

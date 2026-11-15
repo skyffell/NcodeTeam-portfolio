@@ -1,0 +1,72 @@
+// Стили декоративных эллипсов и бейджей
+
+.synergy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  span {
+    color: $text-secondary;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  @include mobile {
+    order: -1;
+    margin-bottom: 1rem;
+    flex-direction: row;
+  }
+}
+
+.vsCircle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: $accent-gradient;
+  @include flex-center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: white;
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
+  flex-shrink: 0;
+
+  @include mobile {
+    order: -1;
+    margin: 0 auto;
+  }
+}
+
+.pulseCircle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: $accent-gradient;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid rgba($accent-frontend, 0.5);
+    animation: pulse 2s infinite ease-out;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,185 @@
+// Стили интерактивного терминала философии разработки
+
+.typingDemo {
+  @include glassmorphism;
+  padding: 3rem;
+  border-radius: $radius-lg;
+  margin-top: 4rem;
+  border: 1px solid rgba($accent-frontend, 0.3);
+  position: relative;
+
+  @include tablet {
+    padding: 2rem;
+    margin-top: 3rem;
+  }
+
+  @include mobile {
+    padding: 1.5rem 1.25rem;
+  }
+
+  h3 {
+    color: $accent-frontend;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+    font-family: $font-heading;
+
+    @include mobile {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.philosophyContent {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3rem;
+  align-items: start;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.philosophyText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  p {
+    color: $text-secondary;
+    line-height: 1.7;
+    font-size: 1rem;
+    border-left: 2px solid rgba($accent-frontend, 0.4);
+    padding-left: 1.1rem;
+    min-height: 3rem;
+    transition: color 0.3s ease, border-left-color 0.3s ease;
+
+    &.active {
+      color: $text-primary;
+      border-left-color: $accent-frontend;
+    }
+  }
+}
+
+.philosophyVisual {
+  background: #090c14;
+  border-radius: $radius-md;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  font-family: $font-code;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.terminalBar {
+  background: rgba(18, 21, 31, 0.95);
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terminalDots {
+  display: flex;
+  gap: 0.45rem;
+
+  span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    &:nth-child(1) { background: #ff5f56; }
+    &:nth-child(2) { background: #ffbd2e; }
+    &:nth-child(3) { background: #27c93f; }
+  }
+}
+
+.terminalTab {
+  font-size: 0.8rem;
+  color: $text-secondary;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  i {
+    color: $accent-frontend;
+    font-size: 0.85rem;
+  }
+}
+
+.codeAnimation {
+  padding: 1.25rem 1rem 1.5rem;
+  font-size: 0.82rem;
+  line-height: 1.75;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  max-height: 440px;
+
+  @include mobile {
+    font-size: 0.74rem;
+    padding: 0.85rem 0.6rem;
+  }
+}
+
+.codeLine {
+  display: flex;
+  align-items: flex-start;
+  white-space: pre;
+}
+
+.lineNumber {
+  width: 1.8rem;
+  color: #475569;
+  user-select: none;
+  text-align: right;
+  margin-right: 1.2rem;
+  flex-shrink: 0;
+  font-size: 0.78rem;
+
+  @include mobile {
+    width: 1.4rem;
+    margin-right: 0.75rem;
+  }
+}
+
+.lineText {
+  flex-grow: 1;
+}
+
+// Подсветка синтаксиса
+.comment {
+  color: #64748b;
+  font-style: italic;
+}
+
+.keyword {
+  color: #00d4ff;
+}
+
+.type {
+  color: #38bdf8;
+}
+
+.decorator {
+  color: #f59e0b;
+}
+
+.func {
+  color: #8b5cf6;
+}
+
+.code {
+  color: #e2e8f0;
+}
+
+.state {
+  color: #a78bfa;
+}
+
+.return {
+  color: #34d399;
+}

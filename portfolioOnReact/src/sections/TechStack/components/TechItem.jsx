@@ -1,15 +1,32 @@
+// Элемент отдельного технологического навыка с анимированным заполнением шкалы
+import { motion } from "framer-motion";
+import styles from "./TechItem.module.scss";
+
 const TechItem = (props) => {
-    const { title, iconsClass, level, dataTech } = props
+    const { title, iconsClass, level, dataTech } = props;
     return (
-        <div className="tech-item" data-tech={dataTech}>
-            <div className="tech-icon">
+        <motion.div
+            className={styles.techItem}
+            data-tech={dataTech}
+            whileHover={{ scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        >
+            <div className={styles.techIcon}>
                 <i className={iconsClass}></i>
             </div>
             <span>{title}</span>
-            <div className="tech-progress">
-                <div className="progress-bar" data-level={`${level}%`}></div>
+            <div className={styles.techProgress}>
+                <motion.div
+                    className={styles.progressBar}
+                    initial={{ width: "0%" }}
+                    whileInView={{ width: `${level}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.1, ease: "easeOut", delay: 0.15 }}
+                    data-level={`${level}%`}
+                ></motion.div>
             </div>
-        </div>
-    )
-}
-export default TechItem
+        </motion.div>
+    );
+};
+
+export default TechItem;

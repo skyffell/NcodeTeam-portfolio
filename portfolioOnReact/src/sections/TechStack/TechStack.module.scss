@@ -1,0 +1,21 @@
+// Стили секции TechStack (Стек технологий)
+
+.techStack {
+  padding: 6rem 0;
+  position: relative;
+
+  @include mobile {
+    padding: 4rem 0;
+  }
+}
+
+.stackContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

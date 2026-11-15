@@ -1,4 +1,7 @@
+// Кнопки ссылок на социальные сети
+import { motion } from "framer-motion";
 import Button from "@components/Button";
+import styles from "./LinkList.module.scss";
 
 const defaultLinks = [
     { iconClass: "fab fa-github", url: "#" },
@@ -10,16 +13,22 @@ const LinkList = (props) => {
     const { links = defaultLinks } = props;
 
     return (
-        <div className="social-links">
+        <div className={styles.socialLinks}>
             {links.map((link, index) => (
-                <Button
+                <motion.div
                     key={link.iconClass || index}
-                    as="a"
-                    href={link.url}
-                    variant="social"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
                 >
-                    <i className={link.iconClass}></i>
-                </Button>
+                    <Button
+                        as="a"
+                        href={link.url}
+                        variant="clean"
+                        className={styles.socialBtn}
+                    >
+                        <i className={link.iconClass}></i>
+                    </Button>
+                </motion.div>
             ))}
         </div>
     );

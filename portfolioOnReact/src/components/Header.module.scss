@@ -1,0 +1,141 @@
+// Стили фиксированной шапки сайта 
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all $transition-normal;
+  padding: 1.25rem 0;
+
+  &.scrolled {
+    padding: 0.85rem 0;
+    @include glassmorphism(rgba(10, 11, 16, 0.85), 20px, rgba(255, 255, 255, 0.08));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.navLink {
+  color: $text-secondary;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color $transition-fast, transform $transition-fast;
+
+  &:hover {
+    color: $accent-frontend;
+    transform: translateY(-1px);
+  }
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.contactBtn {
+  background: $accent-gradient;
+  color: #ffffff;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: $radius-full;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.35);
+  transition: all $transition-normal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 212, 255, 0.6);
+    color: #ffffff;
+  }
+}
+
+.mobileContactBtn {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.burgerBtn {
+  display: none;
+  background: transparent;
+  border: 1px solid $border-color;
+  border-radius: $radius-sm;
+  color: $text-primary;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:hover {
+    border-color: $accent-frontend;
+    color: $accent-frontend;
+  }
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  @include glassmorphism(rgba(18, 21, 31, 0.96), 24px, rgba(255, 255, 255, 0.1));
+  padding: 1.5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  border-top: 1px solid $border-color;
+
+  a {
+    color: $text-primary;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    &:hover {
+      color: $accent-frontend;
+    }
+  }
+}

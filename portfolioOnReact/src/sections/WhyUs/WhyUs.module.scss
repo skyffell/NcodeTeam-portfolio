@@ -1,0 +1,29 @@
+// Стили секции WhyUs (Почему мы)
+
+.whyUs {
+  padding: 6rem 0;
+  position: relative;
+
+  @include mobile {
+    padding: 4rem 0;
+  }
+}
+
+.comparison {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+
+  @include tablet {
+    gap: 2rem;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+}
