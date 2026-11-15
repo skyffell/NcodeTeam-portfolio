@@ -18,7 +18,7 @@ function Hero() {
                 <div className={styles.teamPresentation}>
                     <SectionsHeader
                         mainText="N-CODE TEAM"
-                        subText="От пикселя до API — создаем цифровые решения под ключ"
+                        subText="От пикселя до API - создаем цифровые решения под ключ"
                         isHero={true}
                     />
 
