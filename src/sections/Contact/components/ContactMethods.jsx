@@ -1,6 +1,6 @@
 // Список способов связи команды с плавной анимацией
 import { motion } from "framer-motion";
-import ContactMethod from "./ContacMethod";
+import ContactMethod from "./ContactMethod";
 import styles from "./ContactMethods.module.scss";
 
 const ContactMethods = (props) => {
